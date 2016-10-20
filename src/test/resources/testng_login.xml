@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Login" verbose="1" >
+    <test name="Login">
+        <groups>
+            <run>
+                <include name="Login"  />
+            </run>
+        </groups>
+    </test>
+</suite>
