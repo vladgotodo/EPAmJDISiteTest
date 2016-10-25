@@ -1,11 +1,10 @@
-package com.epam.controls;
+package com.epam.controls.pages.surrounding.pageBlocks.baseBlocks;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class Element {
-
     private By locator;
     private WebElement element;
     private WebDriver driver;
@@ -14,6 +13,12 @@ public class Element {
     {
         this.driver = driver;
         this.locator = By.xpath("//label[contains(., '" + text + "')]/input");
+    }
+
+    public void check()
+    {
+        if(!isChecked())
+            getElement().click();
     }
 
     public WebElement getElement()

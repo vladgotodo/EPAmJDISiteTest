@@ -1,46 +1,36 @@
 package com.epam.uitest;
 
-import com.epam.controls.StartPage;
-import org.openqa.selenium.WebDriver;
+import com.epam.controls.pages.StartPage;
+import com.epam.uitest.surrounding.BaseTest;
+import com.epam.uitest.surrounding.DataProviders;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.UnreachableBrowserException;
-import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
-public class TestLogin {
-    private final String URL_START_PAGE= "https://jdi-framework.github.io/tests/index.htm";
-    private WebDriver driver;
+public class TestLogin extends BaseTest{
+    StartPage startPage;
 
+    @Override
     @BeforeMethod
     public void beforeMethod(){
         driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.navigate().to(URL_START_PAGE);
+        startPage = new StartPage(driver);
     }
 
-    @AfterMethod
-    public void afterMethod() {
-        try {
-            driver.quit();
-        }
-        catch (UnreachableBrowserException e) {
-            System.out.println(e);
-        }
+    @Test(groups = "Login", dataProviderClass = DataProviders.class, dataProvider = "forMainLoginTest")
+    public void loginMain(boolean isTestPositive, String userLogin, String userPassword){
+        startPage.menu.clickMenu().typeUsername(userLogin).typePassword(userPassword).submitLogin();
+        if(isTestPositive)
+            verify(startPage.menu.buttonLogout.getCssValue("display"), "block");
+        else
+            verify(startPage.menu.buttonLogout.getCssValue("display"), "none");
     }
 
-    @Test(groups = "Login", dataProviderClass = DataProvidersForMainLoginTest.class, dataProvider = "forMainLoginTest")
-    public void loginMain(String userLogin, String userPassword){
-        StartPage startPage = new StartPage(driver);
-        startPage.loginAs(userLogin, userPassword);
-    }
-
-    @Test(groups = "Login", dataProviderClass = DataProvidersForMainLoginTest.class, dataProvider = "forAllPageOpeningsAfterLogin")
+    @Test(groups = "Login", dataProviderClass = DataProviders.class, dataProvider = "forAllPageOpeningsAfterLogin")
     public void allPageOpeningsAfterLogin(String url){
-        StartPage startPage = new StartPage(driver);
-        startPage.loginAs("epam", "1234");
+        startPage.menu.clickMenu().typeUsername("epam").typePassword("1234").submitLogin();
         driver.navigate().to(url);
-        Assert.assertEquals(driver.getCurrentUrl(), url);
+        verify(driver.getCurrentUrl(), url);
     }
 }

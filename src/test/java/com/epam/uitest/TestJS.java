@@ -1,36 +1,11 @@
 package com.epam.uitest;
 
+import com.epam.uitest.surrounding.BaseTest;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.UnreachableBrowserException;
-import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class TestJS {
-    private final String URL_START_PAGE= "https://jdi-framework.github.io/tests/index.htm";
-    private WebDriver driver;
-
-    @BeforeMethod
-    public void beforeMethod(){
-        driver = new FirefoxDriver();
-        driver.manage().window().maximize();
-        driver.navigate().to(URL_START_PAGE);
-    }
-
-    @AfterMethod
-    public void afterMethod() {
-        try {
-            driver.quit();
-        }
-        catch (UnreachableBrowserException e) {
-            System.out.println(e);
-        }
-    }
-
+public class TestJS extends BaseTest{
     @Test(groups = "JavaScript")
     public void handleJavaScript(){
         try {
@@ -38,7 +13,7 @@ public class TestJS {
             js.executeScript("alert('ALERT!');");
         }
         catch (Exception e){
-            e.printStackTrace();
+            System.out.println(e);
         }
         /*try {
             Thread.sleep(1000);
@@ -46,7 +21,7 @@ public class TestJS {
             e.printStackTrace();
         }*/
         Alert alert = driver.switchTo().alert();
-        Assert.assertEquals("ALERT!",alert.getText());
+        verify("ALERT!!",alert.getText());
         alert.accept();
     }
 }

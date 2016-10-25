@@ -1,11 +1,12 @@
-package com.epam.controls;
+package com.epam.controls.pages;
 
+import com.epam.controls.pages.surrounding.BasePage;
+import com.epam.controls.pages.surrounding.pageBlocks.Checkbox;
+import com.epam.controls.pages.surrounding.pageBlocks.Radiobutton;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 
-public class Page8 {
-    private WebDriver driver;
-    private static String URL = "https://jdi-framework.github.io/tests/page8.htm";
+public class Page8 extends BasePage {
+    private static final String URL_PAGE = "https://jdi-framework.github.io/tests/page8.htm";
 
     public Checkbox waterCheckbox;
     public Checkbox earthCheckbox;
@@ -17,12 +18,7 @@ public class Page8 {
     public Radiobutton selenRadiobutton;
 
     public Page8(WebDriver driver) {
-        if (!URL.equals(driver.getCurrentUrl())) {
-            throw new IllegalStateException("This is not a required page");
-        }
-
-        PageFactory.initElements(driver, this);
-        this.driver = driver;
+        super(driver,URL_PAGE);
 
         waterCheckbox = new Checkbox(driver, "Water");
         earthCheckbox = new Checkbox(driver, "Earth");
