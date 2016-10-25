@@ -3,18 +3,13 @@ package com.epam.uitest;
 import com.epam.controls.pages.StartPage;
 import com.epam.uitest.surrounding.BaseTest;
 import com.epam.uitest.surrounding.DataProviders;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
 
 public class TestLogin extends BaseTest{
     StartPage startPage;
 
-    @Override
     @BeforeMethod
-    public void beforeMethod(){
-        driver = new FirefoxDriver();
-        driver.manage().window().maximize();
-        driver.navigate().to(URL_START_PAGE);
+    public void thisPageSetup(){
         startPage = new StartPage(driver);
     }
 

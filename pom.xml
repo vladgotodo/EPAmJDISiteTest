@@ -17,11 +17,6 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>RELEASE</version>
-        </dependency>
-        <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>3.0.1</version>
@@ -34,9 +29,11 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.19.1</version>
                 <configuration>
+                    <systemPropertyVariables>
+                        <browser>${browser}</browser>
+                    </systemPropertyVariables>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src\test\resources\testng_all.xml</suiteXmlFile>
-                        <suiteXmlFile>src\test\resources\testng_login.xml</suiteXmlFile>
+                        <suiteXmlFile>src\test\resources\testng_${suite}.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

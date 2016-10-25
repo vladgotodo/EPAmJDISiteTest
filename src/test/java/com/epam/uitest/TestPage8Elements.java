@@ -4,19 +4,14 @@ import com.epam.controls.pages.Page8;
 import com.epam.controls.pages.StartPage;
 import com.epam.uitest.surrounding.BaseTest;
 import com.epam.uitest.surrounding.DataProviders;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
 
-public class TestPage8RadiobuttonsCheckboxes extends BaseTest{
+public class TestPage8Elements extends BaseTest{
     private StartPage startPage;
     private Page8 page8;
 
-    @Override
     @BeforeMethod
-    public void beforeMethod(){
-        driver = new FirefoxDriver();
-        driver.manage().window().maximize();
-        driver.navigate().to(URL_START_PAGE);
+    public void thisPageSetup(){
         startPage = new StartPage(driver);
         startPage.menu.clickMenu().typeUsername("epam").typePassword("1234").submitLogin();
         openSite("https://jdi-framework.github.io/tests/page8.htm");

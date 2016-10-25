@@ -21,7 +21,7 @@ public class TestJS extends BaseTest{
             e.printStackTrace();
         }*/
         Alert alert = driver.switchTo().alert();
-        verify("ALERT!!",alert.getText());
+        verify("ALERT!",alert.getText());
         alert.accept();
     }
 }
