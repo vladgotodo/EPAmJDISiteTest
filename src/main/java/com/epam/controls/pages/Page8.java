@@ -18,7 +18,7 @@ public class Page8 extends BasePage {
     public Radiobutton selenRadiobutton;
 
     public Page8(WebDriver driver) {
-        super(driver,URL_PAGE);
+        super(driver);
 
         waterCheckbox = new Checkbox(driver, "Water");
         earthCheckbox = new Checkbox(driver, "Earth");
@@ -28,5 +28,23 @@ public class Page8 extends BasePage {
         silverRadiobutton = new Radiobutton(driver, "Silver");
         bronzeRadiobutton = new Radiobutton(driver, "Bronze");
         selenRadiobutton = new Radiobutton(driver, "Selen");
+    }
+
+    public void open(){
+        driverS.navigate().to(URL_PAGE);
+    }
+
+    public void setAllCheckboxesStates(boolean water, boolean earth, boolean wind, boolean fire){
+        waterCheckbox.setState(water);
+        earthCheckbox.setState(earth);
+        windCheckbox.setState(wind);
+        fireCheckbox.setState(fire);
+    }
+
+    public void setAllRadiobuttonsStates(boolean gold, boolean silver, boolean bronze, boolean selen){
+        goldRadiobutton.setState(gold);
+        silverRadiobutton.setState(silver);
+        bronzeRadiobutton.setState(bronze);
+        selenRadiobutton.setState(selen);
     }
 }

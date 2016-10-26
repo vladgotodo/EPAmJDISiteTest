@@ -62,7 +62,6 @@ public class BaseTest {
                 break;
         }
         driver.manage().window().maximize();
-        driver.navigate().to(URL_START_PAGE);
     }
 
     @AfterMethod

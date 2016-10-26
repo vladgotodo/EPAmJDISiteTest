@@ -13,22 +13,18 @@ public class TestPage8Elements extends BaseTest{
     @BeforeMethod
     public void thisPageSetup(){
         startPage = new StartPage(driver);
-        startPage.menu.clickMenu().typeUsername("epam").typePassword("1234").submitLogin();
-        openSite("https://jdi-framework.github.io/tests/page8.htm");
+        startPage.open();
+        startPage.menu.clickMenu().
+                typeUsername("epam").
+                typePassword("1234").
+                submitLogin();
         page8 = new Page8(driver);
+        page8.open();
     }
 
     @Test(groups = "page8", dataProviderClass = DataProviders.class, dataProvider = "forPage8Checkboxes")
     public void testPage8Checkboxes(boolean water, boolean earth, boolean wind, boolean fire){
-        if (water == true)
-            page8.waterCheckbox.check();
-        if (earth == true)
-            page8.earthCheckbox.check();
-        if (wind == true)
-            page8.windCheckbox.check();
-        if (fire == true)
-            page8.fireCheckbox.check();
-        verify(page8.waterCheckbox.isChecked(), water);
+        page8.setAllCheckboxesStates(water, earth, wind, fire);
         verify(page8.waterCheckbox.isChecked(), water);
         verify(page8.earthCheckbox.isChecked(), earth);
         verify(page8.windCheckbox.isChecked(), wind);
@@ -37,14 +33,7 @@ public class TestPage8Elements extends BaseTest{
 
     @Test(groups = "page8", dataProviderClass = DataProviders.class, dataProvider = "forPage8Radiobuttons")
     public void testPage8Radiobuttons(boolean gold, boolean silver, boolean bronze, boolean selen){
-        if (gold == true)
-            page8.goldRadiobutton.check();
-        if (silver == true)
-            page8.silverRadiobutton.check();
-        if (bronze == true)
-            page8.bronzeRadiobutton.check();
-        if (selen == true)
-            page8.selenRadiobutton.check();
+        page8.setAllRadiobuttonsStates(gold, silver, bronze, selen);
         verify(page8.goldRadiobutton.isChecked(), gold);
         verify(page8.silverRadiobutton.isChecked(), silver);
         verify(page8.bronzeRadiobutton.isChecked(), bronze);

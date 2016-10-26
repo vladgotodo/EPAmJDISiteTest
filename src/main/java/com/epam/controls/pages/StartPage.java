@@ -9,8 +9,12 @@ public class StartPage extends BasePage {
     public LoginMenu menu;
 
     public StartPage(WebDriver driver) {
-        super(driver, URL_PAGE);
+        super(driver);
         driverS = driver;
         menu = new LoginMenu();
+    }
+
+    public void open(){
+        driverS.navigate().to(URL_PAGE);
     }
 }

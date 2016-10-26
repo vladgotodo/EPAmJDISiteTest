@@ -6,11 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 public class BasePage {
     public static WebDriver driverS;
 
-    public BasePage(WebDriver driver, String pageUrl) {
-        if (!pageUrl.equals(driver.getCurrentUrl())) {
-            throw new IllegalStateException("This is not the start page");
-        }
-
+    public BasePage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         driverS = driver;
     }

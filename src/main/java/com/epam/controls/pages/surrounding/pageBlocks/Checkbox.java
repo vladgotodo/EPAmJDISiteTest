@@ -16,6 +16,16 @@ public class Checkbox extends Element {
         super(driver, text);
     }
 
+    @Override
+    public Checkbox setState(boolean state)
+    {
+        if(state)
+            check();
+        else
+            uncheck();
+        return this;
+    }
+
     public void uncheck()
     {
         if(isChecked())

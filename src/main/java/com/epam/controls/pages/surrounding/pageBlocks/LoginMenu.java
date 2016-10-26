@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class LoginMenu {
     private WebDriver driver;
@@ -27,11 +28,7 @@ public class LoginMenu {
 
     public LoginMenu() {
         driver = StartPage.driverS;
-        profileMenu = driver.findElement(By.className("navbar-right"));
-        loginFormElement = driver.findElement(By.id("Login"));
-        passwordFormElement = driver.findElement(By.id("Password"));
-        buttonLogin = driver.findElement(By.className("btn-login"));
-        buttonLogout = driver.findElement(By.className("logout"));
+        PageFactory.initElements(driver, this);
     }
 
     public void submitLogin() {

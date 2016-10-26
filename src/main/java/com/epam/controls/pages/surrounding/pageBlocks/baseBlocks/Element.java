@@ -15,6 +15,13 @@ public class Element {
         this.locator = By.xpath("//label[contains(., '" + text + "')]/input");
     }
 
+    public Element setState(boolean state)
+    {
+        if(state)
+            check();
+        return this;
+    }
+
     public void check()
     {
         if(!isChecked())
