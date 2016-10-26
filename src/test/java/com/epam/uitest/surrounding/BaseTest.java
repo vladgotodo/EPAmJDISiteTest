@@ -12,6 +12,7 @@ import org.openqa.selenium.remote.UnreachableBrowserException;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 
 import java.io.File;
 import java.io.IOException;
@@ -41,6 +42,19 @@ public class BaseTest {
 
     public void openSite(String URL){
         driver.navigate().to(URL);
+    }
+
+    @BeforeSuite
+    public void mainSetup(){
+        File file;
+        file = new File("C:/Windows/System32/geckodriver.exe");
+        System.setProperty("webdriver.firefox.driver", file.getAbsolutePath());
+        file = new File("C:/Windows/System32/operadriver.exe");
+        System.setProperty("webdriver.opera.driver", file.getAbsolutePath());
+        file = new File("C:/Windows/System32/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
+        file = new File("C:/Windows/System32/IEDriverServer.exe");
+        System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
     }
 
     @BeforeMethod
