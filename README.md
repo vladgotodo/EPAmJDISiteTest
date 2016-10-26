@@ -1,12 +1,13 @@
-To start use "mvn clean install test -Dsuite=all -Dbrowser=chrome"
-browsers	=	"firefox"
-				"chrome"
-				"opera"
-				"ie"
---//**\\----//**\\----//**\\----//**\\----//**\\----//**\\--
-suites =		"all"
-				"login"
---//**\\----//**\\----//**\\----//**\\----//**\\----//**\\--
+To start use "mvn clean install test site -Dsuite=all -Dbrowser=chrome"
+--//**\\----//**\\----//**\\--BROWSERS--//**\\----//**\\----//**\\--
+"firefox"
+"chrome"
+"opera"
+"ie"
+--//**\\----//**\\----//**\\--SUITES--//**\\----//**\\----//**\\--
+"all"
+"login"
+--//**\\----//**\\----//**\\--SURROUNDING--//**\\----//**\\----//**\\--
 OS: 		Windows 10
 Firefox:	49.0.2
 IE: 		11.321.14393.0
