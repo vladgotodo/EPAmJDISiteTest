@@ -2,10 +2,13 @@
 
 <suite name="Login" verbose="1" >
     <test name="Login">
-        <groups>
-            <run>
-                <include name="Login"  />
-            </run>
-        </groups>
+        <classes>
+            <class name="com.epam.uitest.TestLogin"/>
+        </classes>
+    </test>
+    <test name="Page8">
+        <classes>
+            <class name="com.epam.uitest.TestPage8Elements"/>
+        </classes>
     </test>
 </suite>
