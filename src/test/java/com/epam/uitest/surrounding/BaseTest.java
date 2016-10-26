@@ -48,7 +48,7 @@ public class BaseTest {
     public void mainSetup(){
         File file;
         file = new File("C:/Windows/System32/geckodriver.exe");
-        System.setProperty("webdriver.firefox.driver", file.getAbsolutePath());
+        System.setProperty("webdriver.gecko.driver", file.getAbsolutePath());
         file = new File("C:/Windows/System32/operadriver.exe");
         System.setProperty("webdriver.opera.driver", file.getAbsolutePath());
         file = new File("C:/Windows/System32/chromedriver.exe");
