@@ -45,7 +45,7 @@ public class BaseTest {
 
     @BeforeMethod
     public void setup(){
-        String browser = "chrome";//System.getProperty("browser");
+        String browser = System.getProperty("browser");
         switch (browser)
         {
             case "firefox" :
