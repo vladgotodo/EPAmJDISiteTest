@@ -3,8 +3,15 @@ package com.epam.uitest;
 import com.epam.controls.pages.StartPage;
 import com.epam.uitest.surrounding.BaseTest;
 import com.epam.uitest.surrounding.DataProviders;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import java.io.File;
+import java.io.IOException;
 
 public class TestLogin extends BaseTest{
     StartPage startPage;
@@ -17,8 +24,18 @@ public class TestLogin extends BaseTest{
 
     @Test(groups = "Login", dataProviderClass = DataProviders.class, dataProvider = "forMainLoginTest")
     public void loginMain(boolean isTestPositive, String userLogin, String userPassword){
-        startPage.menu.clickMenu().
-                typeUsername(userLogin).
+        try {
+            startPage.menu.clickMenu();
+        }
+        catch (ElementNotVisibleException e){
+            File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            try {
+                FileUtils.copyFile(scrFile, new File("C:\\tmp\\screenshot.png"));
+            } catch (IOException e1) {
+                System.out.println(e1);
+            }
+        }
+        startPage.menu.typeUsername(userLogin).
                 typePassword(userPassword).
                 submitLogin();
         if(isTestPositive)
