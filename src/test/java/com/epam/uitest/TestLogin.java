@@ -3,9 +3,6 @@ package com.epam.uitest;
 import com.epam.controls.pages.StartPage;
 import com.epam.uitest.surrounding.BaseTest;
 import com.epam.uitest.surrounding.DataProviders;
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
