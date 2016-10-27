@@ -1,9 +1,7 @@
 package com.epam.uitest.surrounding;
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -16,7 +14,6 @@ import org.testng.annotations.BeforeSuite;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
     private boolean takeScreeshot = true;
@@ -24,7 +21,6 @@ public class BaseTest {
     protected final String URL_START_PAGE= "https://jdi-framework.github.io/tests/index.htm";
     protected WebDriver driver;
     protected String browser;
-    //protected String browser = "firefox";
 
     public void verify(Object a, Object b){
         try {
@@ -80,7 +76,6 @@ public class BaseTest {
                 driver = new InternetExplorerDriver();
                 break;
         }
-        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
         driver.manage().window().maximize();
     }
 
