@@ -47,8 +47,8 @@ public class BaseTest {
         driver.navigate().to(URL);
     }
 
-    @BeforeClass
-    public void mainSetup(){
+    @BeforeSuite
+    public void baseBrowserSetup(){
         File file;
         file = new File("C:/Windows/System32/geckodriver.exe");
         System.setProperty("webdriver.gecko.driver", file.getAbsolutePath());
@@ -58,11 +58,11 @@ public class BaseTest {
         System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
         file = new File("C:/Windows/System32/IEDriverServer.exe");
         System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
-        browser = System.getProperty("browser");
     }
 
     @BeforeMethod
     public void setup(){
+        browser = System.getProperty("browser");
         switch (browser)
         {
             case "firefox" :
