@@ -1,20 +1,16 @@
 package com.epam.controls.pages.surrounding.pageBlocks;
 
-import com.epam.controls.pages.Page8;
 import com.epam.controls.pages.StartPage;
-import com.epam.controls.pages.surrounding.BasePage;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginMenu {
     private WebDriver driver;
 
-    @FindBy(className = "navbar-right")
+    //@FindBy(className = "navbar-right")
+    @FindBy(xpath = "html/body/div/header/div/nav/ul[2]")
     private WebElement profileMenu;
 
     @FindBy(id = "Login")
@@ -39,7 +35,6 @@ public class LoginMenu {
     }
 
     public LoginMenu clickMenu() {
-        new WebDriverWait(StartPage.driverS, 30).until(ExpectedConditions.visibilityOfElementLocated(By.className("navbar-right")));
         profileMenu.click();
         return this;
     }
