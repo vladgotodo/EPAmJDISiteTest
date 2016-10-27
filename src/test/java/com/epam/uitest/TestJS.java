@@ -1,11 +1,19 @@
 package com.epam.uitest;
 
+import com.epam.controls.pages.StartPage;
 import com.epam.uitest.surrounding.BaseTest;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class TestJS extends BaseTest{
+    @BeforeMethod
+    public void thisPageSetup(){
+        StartPage startPage = new StartPage(driver);
+        startPage.open();
+    }
+
     @Test(groups = "JavaScript")
     public void handleJavaScript(){
         try {

@@ -31,7 +31,7 @@ public class TestPage8Elements extends BaseTest{
         verify(page8.fireCheckbox.isChecked(), fire);
     }
 
-    @Test(groups = "page8", dataProviderClass = DataProviders.class, dataProvider = "forPage8Radiobuttons")
+    @Test(groups = "Page8", dataProviderClass = DataProviders.class, dataProvider = "forPage8Radiobuttons")
     public void testPage8Radiobuttons(boolean gold, boolean silver, boolean bronze, boolean selen){
         page8.setAllRadiobuttonsStates(gold, silver, bronze, selen);
         verify(page8.goldRadiobutton.isChecked(), gold);

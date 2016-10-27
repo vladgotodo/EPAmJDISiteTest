@@ -21,6 +21,8 @@ public class BaseTest {
     private boolean takeScreeshot = true;
     protected final String URL_START_PAGE= "https://jdi-framework.github.io/tests/index.htm";
     protected WebDriver driver;
+    protected String browser;
+    //protected String browser = "firefox";
 
     public void verify(Object a, Object b){
         try {
@@ -55,11 +57,11 @@ public class BaseTest {
         System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
         file = new File("C:/Windows/System32/IEDriverServer.exe");
         System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
+        browser = System.getProperty("browser");
     }
 
     @BeforeMethod
     public void setup(){
-        String browser = System.getProperty("browser");
         switch (browser)
         {
             case "firefox" :
