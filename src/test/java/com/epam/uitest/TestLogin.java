@@ -24,6 +24,7 @@ public class TestLogin extends BaseTest{
 
     @Test(groups = "Login", dataProviderClass = DataProviders.class, dataProvider = "forMainLoginTest")
     public void loginMain(boolean isTestPositive, String userLogin, String userPassword){
+        StartPage.driverS.navigate().refresh();
         try {
             startPage.menu.clickMenu();
         }
