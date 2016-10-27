@@ -11,15 +11,16 @@ import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.remote.UnreachableBrowserException;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
     private boolean takeScreeshot = true;
+    private int screenShotCount = 0;
     protected final String URL_START_PAGE= "https://jdi-framework.github.io/tests/index.htm";
     protected WebDriver driver;
     protected String browser;
@@ -34,7 +35,8 @@ public class BaseTest {
             {
                 File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
                 try {
-                    FileUtils.copyFile(scrFile, new File("C:\\tmp\\screenshot.png"));
+                    FileUtils.copyFile(scrFile, new File("C:\\tmp\\screenshot"+screenShotCount+".png"));
+                    screenShotCount++;
                 } catch (IOException e1) {
                     System.out.println(e1);
                 }
@@ -78,6 +80,7 @@ public class BaseTest {
                 driver = new InternetExplorerDriver();
                 break;
         }
+        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
         driver.manage().window().maximize();
     }
 
