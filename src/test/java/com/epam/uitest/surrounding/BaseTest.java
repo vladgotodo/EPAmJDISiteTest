@@ -11,6 +11,7 @@ import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.remote.UnreachableBrowserException;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
@@ -66,21 +67,18 @@ public class BaseTest {
         {
             case "firefox" :
                 driver = new FirefoxDriver();
-                driver.manage().window().maximize();
                 break;
             case "opera" :
                 driver = new OperaDriver();
-                driver.manage().window().maximize();
                 break;
             case "chrome" :
                 driver = new ChromeDriver();
-                driver.manage().window().maximize();
                 break;
             case "ie" :
                 driver = new InternetExplorerDriver();
-                driver.manage().window().maximize();
                 break;
         }
+        driver.manage().window().maximize();
     }
 
     @AfterMethod
