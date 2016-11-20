@@ -4,7 +4,6 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-	
     <groupId>epam</groupId>
     <artifactId>hometask</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -15,6 +14,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.epam.jdi</groupId>
+            <artifactId>jdi-uitest-web</artifactId>
+            <version>1.0.33</version>
+        </dependency>
+        <dependency>
             <groupId>ru.yandex.qatools.allure</groupId>
             <artifactId>allure-testng-adaptor</artifactId>
             <version>1.4.23</version>
@@ -24,6 +28,11 @@
             <artifactId>testng</artifactId>
             <version>6.9.13.6</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>ru.yandex.qatools.ashot</groupId>
+            <artifactId>ashot</artifactId>
+            <version>1.5.2</version>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -40,6 +49,17 @@
 		   <artifactId>slf4j-simple</artifactId>
 		   <version>1.6.4</version>
 	   </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-api</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>1.2.2</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -48,7 +68,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.19.1</version>
                 <configuration>
-                    <testFailureIgnore>false</testFailureIgnore>
+                    <testFailureIgnore>true</testFailureIgnore>
                     <argLine>
                         -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
                     </argLine>
@@ -58,12 +78,12 @@
                             <value>ru.yandex.qatools.allure.testng.AllureTestListener</value>
                         </property>
                     </properties>
-                    <systemPropertyVariables>
+                    <!--<systemPropertyVariables>
                         <browser>${browser}</browser>
                     </systemPropertyVariables>
                     <suiteXmlFiles>
                         <suiteXmlFile>src\test\resources\testng_${suite}.xml</suiteXmlFile>
-                    </suiteXmlFiles>
+                    </suiteXmlFiles>-->
                 </configuration>
                 <dependencies>
                     <dependency>
