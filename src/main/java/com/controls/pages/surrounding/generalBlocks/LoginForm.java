@@ -1,4 +1,4 @@
-package com.controls.pages.surrounding.pageBlocks.generalBlocks;
+package com.controls.pages.surrounding.generalBlocks;
 
 import com.controls.pages.surrounding.other.User;
 import com.epam.jdi.uitests.core.interfaces.base.IClickable;

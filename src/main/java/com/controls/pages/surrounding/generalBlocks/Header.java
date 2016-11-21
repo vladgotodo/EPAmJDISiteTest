@@ -1,4 +1,4 @@
-package com.controls.pages.surrounding.pageBlocks.generalBlocks;
+package com.controls.pages.surrounding.generalBlocks;
 
 import com.epam.jdi.uitests.core.interfaces.common.IButton;
 import com.epam.jdi.uitests.core.interfaces.common.IImage;

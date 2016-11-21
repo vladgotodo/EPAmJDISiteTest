@@ -1,4 +1,4 @@
-package com.controls.pages.surrounding.pageBlocks.generalBlocks;
+package com.controls.pages.surrounding.generalBlocks;
 
 import com.epam.jdi.uitests.core.interfaces.complex.IMenu;
 import com.epam.jdi.uitests.web.selenium.elements.composite.Section;

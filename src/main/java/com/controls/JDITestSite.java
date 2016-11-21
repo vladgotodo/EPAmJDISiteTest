@@ -1,7 +1,7 @@
 package com.controls;
 
 import com.controls.pages.*;
-import com.controls.pages.surrounding.pageBlocks.generalBlocks.*;
+import com.controls.pages.surrounding.generalBlocks.*;
 import com.epam.jdi.uitests.core.interfaces.complex.IPagination;
 import com.epam.jdi.uitests.web.selenium.elements.composite.Pagination;
 import com.epam.jdi.uitests.web.selenium.elements.composite.WebSite;
