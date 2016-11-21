@@ -17,7 +17,7 @@ public class MetalsColorsTests extends InitTests {
         metalsColorsPage.checkOpened();
     }
 
-    @Test(groups = "MetalsColorsFormTest", dataProviderClass = DataProviders.class, dataProvider = "MetalsColorsTest")
+    @Test(groups = "metalsColorsFormTest", dataProviderClass = DataProviders.class, dataProvider = "MetalsColorsTest")
     public void metalsColorsFormTest(Plate plate) {
         metalsColorsPage.checkOpened();
         metalsColorsPage.metalsColorsForm.submit(plate);

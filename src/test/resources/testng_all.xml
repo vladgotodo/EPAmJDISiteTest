@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="All" verbose="1" >
+    <test name="MetalsColors">
+        <classes>
+            <class name="com.epam.uitest.MetalsColorsTests"/>
+        </classes>
+    </test>
+    <test name="NavElements">
+        <classes>
+            <class name="com.epam.uitest.NavigationElementsTests"/>
+        </classes>
+    </test>
+</suite>

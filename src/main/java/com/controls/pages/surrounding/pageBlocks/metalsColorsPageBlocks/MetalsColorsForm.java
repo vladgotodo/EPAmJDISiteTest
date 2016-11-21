@@ -37,7 +37,7 @@ public class MetalsColorsForm extends Form<Plate> {
         elementsCheckList.select(plate.elementsCheckList);
         colorsDropdown.click();
         colorsDropdown.select(plate.color);
-        saladDroplist.uncheckAll();
+        saladDroplist.select("Salad");
         saladDroplist.select(plate.saladDroplist);
         super.submit(plate);
     }

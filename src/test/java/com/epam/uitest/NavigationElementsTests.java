@@ -10,13 +10,13 @@ import static com.controls.JDITestSite.*;
 
 public class NavigationElementsTests extends InitTests {
 
-    @Test(groups = "SearchField", dataProviderClass = DataProviders.class, dataProvider = "SearchFieldTest")
+    @Test(groups = "searchField", dataProviderClass = DataProviders.class, dataProvider = "SearchFieldTest")
     public void searchFieldTest(String searchRequest) {
         header.searchField.findAction(searchRequest);
         supportPage.checkOpened();
     }
 
-    @Test(groups = "Navigation")
+    @Test(groups = "navigation")
     public void navigationTest() {
         supportPage.open();
         supportPage.checkOpened();
