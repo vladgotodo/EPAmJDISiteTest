@@ -7,10 +7,10 @@ import org.openqa.selenium.support.FindBy;
 
 public class SearchField extends Search {
     @FindBy(css = ".search-field input")
-    public ITextField searchInput;
+    private ITextField searchInput;
 
     @FindBy(css = ".search .icon-search")
-    public IButton searchButton;
+    private IButton searchButton;
 
     @Override
     public void findAction(String text) {

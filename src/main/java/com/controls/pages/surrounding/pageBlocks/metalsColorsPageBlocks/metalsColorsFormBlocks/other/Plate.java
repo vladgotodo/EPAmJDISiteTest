@@ -10,7 +10,7 @@ public class Plate {
     public String metalsComboBox = "Selen";
     public String[] saladDroplist = new String[]{"Cucumber", "Tomato", "Onion"};
 
-    public Plate() {
+    private Plate() {
     }
 
     public Plate(String odds, String even, String[] elementsCheckList,

@@ -2,24 +2,25 @@ package com.epam.uitest;
 
 import com.controls.pages.surrounding.pageBlocks.metalsColorsPageBlocks.metalsColorsFormBlocks.other.Plate;
 import com.epam.uitest.surrounding.InitTests;
+import com.epam.uitest.surrounding.dataproviders.DataProviders;
 import com.epam.web.matcher.testng.Assert;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static com.controls.JDITestSite.metalsColorsPage;
 
 public class MetalsColorsTests extends InitTests {
-    @BeforeClass
+
+    @BeforeMethod
     public void before() {
         metalsColorsPage.open();
         metalsColorsPage.checkOpened();
     }
 
-    @Test
-    public void simpliestTest() {
+    @Test(groups = "MetalsColorsFormTest", dataProviderClass = DataProviders.class, dataProvider = "MetalsColorsTest")
+    public void metalsColorsFormTest(Plate plate) {
         metalsColorsPage.checkOpened();
-        Plate plate = Plate.DEFAULT;
-        metalsColorsPage.metalsColorsForm.submit(Plate.DEFAULT);
+        metalsColorsPage.metalsColorsForm.submit(plate);
         Assert.contains(metalsColorsPage.summaryField.getText(), String.valueOf(Integer.parseInt(plate.odds)
             + Integer.parseInt(plate.even)));
         for(String element : plate.elementsCheckList)

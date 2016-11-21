@@ -9,11 +9,11 @@ import org.testng.annotations.Test;
 import static com.controls.JDITestSite.*;
 
 public class NavigationElementsTests extends InitTests {
+
     @Test(groups = "SearchField", dataProviderClass = DataProviders.class, dataProvider = "SearchFieldTest")
     public void searchFieldTest(String searchRequest) {
         header.searchField.findAction(searchRequest);
         supportPage.checkOpened();
-        contactPage.checkOpened();
     }
 
     @Test(groups = "Navigation")
