@@ -16,13 +16,13 @@ public class ContactForm extends Form<ContactFormType> {
     private ITextField lastNameField;
     @FindBy(id = "Description")
     private ITextArea descriptionField;
-    @FindBy(xpath = "/html/body/div/div/main/div[2]/div/form/div[3]/div[2]/button")
-    private IButton submit;
+    @FindBy(xpath = "//*[text()='Submit']")
+    public IButton submit;
 
     @Override
     public void submit(ContactFormType contactFormType) {
-        /*contactFormSummarySection.odds.select(contactFormType.odds);
-        contactFormSummarySection.even.select(contactFormType.even);*/
+        contactFormSummarySection.odds.select(contactFormType.odds);
+        contactFormSummarySection.even.select(contactFormType.even);
         descriptionField.sendKeys(contactFormType.description);
         super.submit(contactFormType);
     }

@@ -16,7 +16,7 @@
         <dependency>
             <groupId>com.epam.jdi</groupId>
             <artifactId>jdi-uitest-web</artifactId>
-            <version>1.0.33</version>
+            <version>1.0.36</version>
         </dependency>
         <dependency>
             <groupId>ru.yandex.qatools.allure</groupId>
@@ -77,10 +77,10 @@
                     </systemPropertyVariables>
                     <suiteXmlFiles>
                         <suiteXmlFile>src\test\resources\testng_${suite}.xml</suiteXmlFile>
-                    </suiteXmlFiles>-->
+                    </suiteXmlFiles>
                     <suiteXmlFiles>
                         <suiteXmlFile>src\test\resources\testng_all.xml</suiteXmlFile>
-                    </suiteXmlFiles>
+                    </suiteXmlFiles>-->
                 </configuration>
                 <dependencies>
                     <dependency>

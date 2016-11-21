@@ -27,9 +27,9 @@ public class DataProviders {
     @DataProvider(name = "ContactFormTest")
     public static Object[][] contactFormTest() {
         return new ContactFormType[][]{
-                {new ContactFormType("1","2", "Green", "Gold", "afgdkgfdlgn")},
-                {new ContactFormType("3","4","Red", "Silver", "aasdasdfgdhf")},
-                {new ContactFormType("5","6","Yellow", "Bronze", "qwertghjj")},
+                {new ContactFormType("7","8", "Green", "Gold", "afgdkgfdlgn")},
+                {new ContactFormType("7","8","Red", "Silver", "aasdasdfgdhf")},
+                {new ContactFormType("7","8","Yellow", "Bronze", "qwertghjj")},
                 {new ContactFormType("7","8","Blue", "Selen","erghtbtgdnhgf")}};
     }
 }
