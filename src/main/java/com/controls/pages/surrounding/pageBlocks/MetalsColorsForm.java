@@ -1,7 +1,6 @@
-package com.controls.pages.surrounding.pageBlocks.metalsColorsPageBlocks;
+package com.controls.pages.surrounding.pageBlocks;
 
-import com.controls.pages.surrounding.pageBlocks.metalsColorsPageBlocks.metalsColorsFormBlocks.*;
-import com.controls.pages.surrounding.pageBlocks.metalsColorsPageBlocks.metalsColorsFormBlocks.other.Plate;
+import com.controls.pages.surrounding.fillingTypes.Plate;
 import com.epam.jdi.uitests.core.interfaces.common.IButton;
 import com.epam.jdi.uitests.core.interfaces.complex.ICheckList;
 import com.epam.jdi.uitests.core.interfaces.complex.IComboBox;
@@ -18,7 +17,7 @@ import org.openqa.selenium.support.FindBy;
 @JPage(url = "/page2.htm", title = "Metal and Colors")
 public class MetalsColorsForm extends Form<Plate> {
     @FindBy(id = "summary-block")
-    private SummarySection summarySection = new SummarySection();
+    private MetalsColorsFormSummarySection metalsColorsFormSummarySection = new MetalsColorsFormSummarySection();
     @FindBy(css = "#elements-checklist label")
     private ICheckList elementsCheckList;
     private IDropDown colorsDropdown = new Dropdown(By.cssSelector(".colors .filter-option"),
@@ -32,8 +31,8 @@ public class MetalsColorsForm extends Form<Plate> {
 
     @Override
     public void submit(Plate plate) {
-        summarySection.odds.select(plate.odds);
-        summarySection.even.select(plate.even);
+        metalsColorsFormSummarySection.odds.select(plate.odds);
+        metalsColorsFormSummarySection.even.select(plate.even);
         elementsCheckList.select(plate.elementsCheckList);
         colorsDropdown.click();
         colorsDropdown.select(plate.color);

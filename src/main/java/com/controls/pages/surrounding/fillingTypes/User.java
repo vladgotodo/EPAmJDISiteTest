@@ -1,4 +1,4 @@
-package com.controls.pages.surrounding.other;
+package com.controls.pages.surrounding.fillingTypes;
 
 public class User {
     public static final User DEFAULT = new User();

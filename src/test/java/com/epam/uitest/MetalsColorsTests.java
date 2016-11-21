@@ -1,6 +1,6 @@
 package com.epam.uitest;
 
-import com.controls.pages.surrounding.pageBlocks.metalsColorsPageBlocks.metalsColorsFormBlocks.other.Plate;
+import com.controls.pages.surrounding.fillingTypes.Plate;
 import com.epam.uitest.surrounding.InitTests;
 import com.epam.uitest.surrounding.dataproviders.DataProviders;
 import com.epam.web.matcher.testng.Assert;

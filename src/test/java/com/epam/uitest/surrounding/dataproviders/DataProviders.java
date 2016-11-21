@@ -1,6 +1,7 @@
 package com.epam.uitest.surrounding.dataproviders;
 
-import com.controls.pages.surrounding.pageBlocks.metalsColorsPageBlocks.metalsColorsFormBlocks.other.Plate;
+import com.controls.pages.surrounding.fillingTypes.ContactFormType;
+import com.controls.pages.surrounding.fillingTypes.Plate;
 import org.testng.annotations.DataProvider;
 
 public class DataProviders {
@@ -21,5 +22,14 @@ public class DataProviders {
                         new String[]{"Cucumber", "Tomato"})},
                 {new Plate("7","8",new String[]{"Wind", "Fire"},"Blue", "Selen",
                         new String[]{"Cucumber", "Tomato", "Onion", "Salad"})}};
+    }
+
+    @DataProvider(name = "ContactFormTest")
+    public static Object[][] contactFormTest() {
+        return new ContactFormType[][]{
+                {new ContactFormType("1","2", "Green", "Gold", "afgdkgfdlgn")},
+                {new ContactFormType("3","4","Red", "Silver", "aasdasdfgdhf")},
+                {new ContactFormType("5","6","Yellow", "Bronze", "qwertghjj")},
+                {new ContactFormType("7","8","Blue", "Selen","erghtbtgdnhgf")}};
     }
 }

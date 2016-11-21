@@ -1,7 +1,7 @@
 package com.epam.uitest.surrounding;
 
 import com.controls.JDITestSite;
-import com.controls.pages.surrounding.other.User;
+import com.controls.pages.surrounding.fillingTypes.User;
 import com.epam.jdi.uitests.web.selenium.elements.composite.WebSite;
 import com.epam.jdi.uitests.web.settings.WebSettings;
 import com.epam.jdi.uitests.web.testng.testRunner.TestNGBase;

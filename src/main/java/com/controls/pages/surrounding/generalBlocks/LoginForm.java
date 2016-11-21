@@ -1,6 +1,6 @@
 package com.controls.pages.surrounding.generalBlocks;
 
-import com.controls.pages.surrounding.other.User;
+import com.controls.pages.surrounding.fillingTypes.User;
 import com.epam.jdi.uitests.core.interfaces.base.IClickable;
 import com.epam.jdi.uitests.core.interfaces.common.IButton;
 import com.epam.jdi.uitests.core.interfaces.common.ITextField;

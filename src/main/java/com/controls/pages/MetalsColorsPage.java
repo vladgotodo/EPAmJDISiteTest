@@ -1,6 +1,6 @@
 package com.controls.pages;
 
-import com.controls.pages.surrounding.pageBlocks.metalsColorsPageBlocks.MetalsColorsForm;
+import com.controls.pages.surrounding.pageBlocks.MetalsColorsForm;
 import com.epam.jdi.uitests.core.interfaces.common.IText;
 import com.epam.jdi.uitests.web.selenium.elements.composite.WebPage;
 import org.openqa.selenium.support.FindBy;

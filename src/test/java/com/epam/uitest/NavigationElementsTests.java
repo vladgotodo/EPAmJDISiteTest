@@ -1,5 +1,6 @@
 package com.epam.uitest;
 
+import com.controls.pages.surrounding.fillingTypes.ContactFormType;
 import com.epam.jdi.uitests.web.selenium.elements.composite.WebPage;
 import com.epam.uitest.surrounding.InitTests;
 import com.epam.uitest.surrounding.dataproviders.DataProviders;
@@ -14,6 +15,18 @@ public class NavigationElementsTests extends InitTests {
     public void searchFieldTest(String searchRequest) {
         header.searchField.findAction(searchRequest);
         supportPage.checkOpened();
+    }
+
+    @Test(groups = "contactForm", dataProviderClass = DataProviders.class, dataProvider = "ContactFormTest")
+    public void contactFormTest(ContactFormType contactFormType) {
+        contactPage.open();
+        contactPage.checkOpened();
+        contactPage.contactForm.submit(contactFormType);
+        Assert.contains(contactPage.summaryField.getText(), String.valueOf(Integer.parseInt(contactFormType.odds)
+                + Integer.parseInt(contactFormType.even)));
+        Assert.contains(contactPage.nameField.getText(), contactFormType.nameField);
+        Assert.contains(contactPage.lastNameField.getText(), contactFormType.lastNameField);
+        Assert.contains(contactPage.descriptionField.getText(), contactFormType.description);
     }
 
     @Test(groups = "navigation")

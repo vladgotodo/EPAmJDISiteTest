@@ -1,4 +1,4 @@
-package com.controls.pages.surrounding.pageBlocks.metalsColorsPageBlocks.metalsColorsFormBlocks.other;
+package com.controls.pages.surrounding.fillingTypes;
 
 public class Plate {
     public static final Plate DEFAULT = new Plate();
