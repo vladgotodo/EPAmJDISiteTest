@@ -5,7 +5,7 @@ import com.epam.jdi.uitests.core.interfaces.complex.IRadioButtons;
 import com.epam.jdi.uitests.web.selenium.elements.composite.Section;
 import org.openqa.selenium.support.FindBy;
 
-public class MetalsColorsFormSummarySection extends Section{
+class MetalsColorsFormSummarySection extends Section{
     @FindBy(css = "#odds-selector p")
     public IRadioButtons odds;
     @FindBy(css = "#even-selector p")

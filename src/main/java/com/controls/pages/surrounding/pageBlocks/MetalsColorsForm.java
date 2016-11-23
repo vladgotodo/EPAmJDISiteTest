@@ -11,21 +11,32 @@ import com.epam.jdi.uitests.web.selenium.elements.complex.DropList;
 import com.epam.jdi.uitests.web.selenium.elements.complex.Dropdown;
 import com.epam.jdi.uitests.web.selenium.elements.composite.Form;
 import com.epam.jdi.uitests.web.selenium.elements.pageobjects.annotations.JPage;
+import com.epam.jdi.uitests.web.selenium.elements.pageobjects.annotations.objects.JDropdown;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
 
 @JPage(url = "/page2.htm", title = "Metal and Colors")
 public class MetalsColorsForm extends Form<Plate> {
+
     @FindBy(id = "summary-block")
     private MetalsColorsFormSummarySection metalsColorsFormSummarySection = new MetalsColorsFormSummarySection();
+
     @FindBy(css = "#elements-checklist label")
     private ICheckList elementsCheckList;
-    private IDropDown colorsDropdown = new Dropdown(By.cssSelector(".colors .filter-option"),
-            By.cssSelector(".colors li span"));
+
+    @JDropdown(
+            root = @FindBy(css = ".btn.dropdown-toggle.selectpicker.btn-default"),
+            value = @FindBy(css = ".colors .filter-option"),
+            elementByName = @FindBy(css = ".colors li span")
+    )
+    private IDropDown colorsDropdown;
+
     private IComboBox metalsComboBox = new ComboBox(By.cssSelector(".metals .caret"),
             By.cssSelector(".metals li span"), By.cssSelector(".metals input"));
+
     private IDropList saladDroplist = new DropList(By.cssSelector(".salad .caret"),
             By.cssSelector(".salad li label"));
+
     @FindBy(id = "submit-button")
     private IButton submit;
 

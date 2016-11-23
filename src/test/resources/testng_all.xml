@@ -3,7 +3,7 @@
 <suite name="All" verbose="1" >
     <test name="MetalsColors">
         <classes>
-            <class name="com.epam.uitest.MetalsColorsTests"/>
+            <class name="com.epam.uitest.MetalsColorsPageTests"/>
         </classes>
     </test>
     <test name="NavElements">

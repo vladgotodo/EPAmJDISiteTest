@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import static com.controls.JDITestSite.metalsColorsPage;
 
-public class MetalsColorsTests extends InitTests {
+public class MetalsColorsPageTests extends InitTests {
 
     @BeforeMethod
     public void before() {
@@ -19,7 +19,6 @@ public class MetalsColorsTests extends InitTests {
 
     @Test(groups = "metalsColorsFormTest", dataProviderClass = DataProviders.class, dataProvider = "MetalsColorsTest")
     public void metalsColorsFormTest(Plate plate) {
-        metalsColorsPage.checkOpened();
         metalsColorsPage.metalsColorsForm.submit(plate);
         Assert.contains(metalsColorsPage.summaryField.getText(), String.valueOf(Integer.parseInt(plate.odds)
             + Integer.parseInt(plate.even)));

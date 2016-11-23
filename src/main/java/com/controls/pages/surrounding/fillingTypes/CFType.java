@@ -1,7 +1,7 @@
 package com.controls.pages.surrounding.fillingTypes;
 
-public class ContactFormType {
-    public static final ContactFormType DEFAULT = new ContactFormType();
+public class CFType {
+    public static final CFType DEFAULT = new CFType();
 
     public String odds = "7";
     public String even = "8";
@@ -9,11 +9,11 @@ public class ContactFormType {
     public String lastNameField = "Johnson";
     public String description = "blablabla";
 
-    private ContactFormType() {
+    private CFType() {
     }
 
 
-    public ContactFormType(String odds, String even, String name, String lastName, String description) {
+    public CFType(String odds, String even, String name, String lastName, String description) {
         this.odds = odds;
         this.even = even;
         this.nameField = name;

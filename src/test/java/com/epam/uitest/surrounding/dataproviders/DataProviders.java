@@ -1,6 +1,7 @@
 package com.epam.uitest.surrounding.dataproviders;
 
-import com.controls.pages.surrounding.fillingTypes.ContactFormType;
+import com.controls.pages.surrounding.fillingTypes.CFType;
+import com.controls.pages.surrounding.fillingTypes.DEType;
 import com.controls.pages.surrounding.fillingTypes.Plate;
 import org.testng.annotations.DataProvider;
 
@@ -26,10 +27,10 @@ public class DataProviders {
 
     @DataProvider(name = "ContactFormTest")
     public static Object[][] contactFormTest() {
-        return new ContactFormType[][]{
-                {new ContactFormType("7","8", "Green", "Gold", "afgdkgfdlgn")},
-                {new ContactFormType("7","8","Red", "Silver", "aasdasdfgdhf")},
-                {new ContactFormType("7","8","Yellow", "Bronze", "qwertghjj")},
-                {new ContactFormType("7","8","Blue", "Selen","erghtbtgdnhgf")}};
+        return new CFType[][]{
+                {new CFType("7","8", "Green", "Gold", "afgdkgfdlgn")},
+                {new CFType("7","8","Red", "Silver", "aasdasdfgdhf")},
+                {new CFType("7","8","Yellow", "Bronze", "qwertghjj")},
+                {new CFType("7","8","Blue", "Selen","erghtbtgdnhgf")}};
     }
 }

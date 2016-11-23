@@ -5,7 +5,7 @@ import com.epam.jdi.uitests.core.interfaces.complex.IRadioButtons;
 import com.epam.jdi.uitests.web.selenium.elements.composite.Section;
 import org.openqa.selenium.support.FindBy;
 
-public class ContactFormSummarySection extends Section{
+class ContactFormSummarySection extends Section{
     @FindBy(css = ".horizontal-group p")
     public IRadioButtons odds;
     @FindBy(css = ".horizontal-group p")

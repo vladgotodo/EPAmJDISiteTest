@@ -26,12 +26,13 @@ public class JDITestSite extends WebSite{
     public static Footer footer;
     @FindBy(css = ".sidebar-menu")
     public static Sidebar sidebar;
+    @JPage(url = "/page8.htm", title = "Different Element")
+    public static DifferentElementPage differentElementPage;
     @FindBy(css = ".sidebar-menu>li>a")
     public static IPagination pageNavigationLine = new Pagination(By.className(".sidebar-menu>li>a"),
-            By.className("fa-long-arrow-right"), By.className("fa-long-arrow-left"), By.xpath("/html/body/div/div/main/div[2]/ul/li[2]/a"),
+            By.className("fa-long-arrow-right"), By.className("fa-long-arrow-left"),
+            By.xpath("/html/body/div/div/main/div[2]/ul/li[2]/a"),
             By.xpath("/html/body/div/div/main/div[2]/ul/li[11]/a"));
-
-
 
     @JPage(url = "/page3.htm", title = "Support")
     public static SupportPage supportPage;
@@ -43,6 +44,4 @@ public class JDITestSite extends WebSite{
     public static SimpleTablePage simpleTablePage;
     @JPage(url = "/page7.htm", title = "Table with pages")
     public static TablePagesPage tablePagesPage;
-    @JPage(url = "/page8.htm", title = "Different Element")
-    public static DifferentElementPage differentElementPage;
 }

@@ -19,5 +19,4 @@ public class MetalsColorsPage extends WebPage {
     public IText metalsField;
     @FindBy(css = ".sal-res")
     public IText saladField;
-
 }
