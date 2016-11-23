@@ -1,6 +1,5 @@
 package com.epam.uitest;
 
-import com.controls.pages.surrounding.fillingTypes.CFType;
 import com.epam.jdi.uitests.web.selenium.elements.composite.WebPage;
 import com.epam.uitest.surrounding.InitTests;
 import com.epam.uitest.surrounding.dataproviders.DataProviders;

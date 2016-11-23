@@ -4,17 +4,17 @@ import com.controls.pages.surrounding.fillingTypes.Plate;
 import com.epam.uitest.surrounding.InitTests;
 import com.epam.uitest.surrounding.dataproviders.DataProviders;
 import com.epam.web.matcher.testng.Assert;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
+import static com.controls.pages.surrounding.Preconditions.MCPAGE_OPENED;
+import static com.epam.jdi.uitests.core.preconditions.PreconditionsState.isInState;
 import static com.controls.JDITestSite.metalsColorsPage;
 
 public class MetalsColorsPageTests extends InitTests {
 
     @BeforeMethod
-    public void before() {
-        metalsColorsPage.open();
-        metalsColorsPage.checkOpened();
+    public void beforeMethod() {
+        isInState(MCPAGE_OPENED);
     }
 
     @Test(groups = "metalsColorsFormTest", dataProviderClass = DataProviders.class, dataProvider = "MetalsColorsTest")
@@ -28,5 +28,6 @@ public class MetalsColorsPageTests extends InitTests {
         Assert.contains(metalsColorsPage.metalsField.getText(), plate.metalsComboBox);
         for(String element : plate.saladDroplist)
             Assert.contains(metalsColorsPage.saladField.getText(), element);
+        metalsColorsPage.metalsColorsForm.uncheckAll(plate);
     }
 }

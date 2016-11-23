@@ -1,7 +1,6 @@
 package com.epam.uitest.surrounding.dataproviders;
 
 import com.controls.pages.surrounding.fillingTypes.CFType;
-import com.controls.pages.surrounding.fillingTypes.DEType;
 import com.controls.pages.surrounding.fillingTypes.Plate;
 import org.testng.annotations.DataProvider;
 
@@ -9,7 +8,8 @@ public class DataProviders {
     @DataProvider(name = "SearchFieldTest")
     public static Object[][] searchFieldTest() {
         return new Object[][]{{"123456"},
-            {"asdfghjkl"}, {"фывапролд"}};
+            {"asdfghjkl"}, {"фывапролд"}
+        };
     }
 
     @DataProvider(name = "MetalsColorsTest")
@@ -22,7 +22,8 @@ public class DataProviders {
                 {new Plate("5","6",new String[]{"Water", "Fire"},"Yellow", "Bronze",
                         new String[]{"Cucumber", "Tomato"})},
                 {new Plate("7","8",new String[]{"Wind", "Fire"},"Blue", "Selen",
-                        new String[]{"Cucumber", "Tomato", "Onion", "Salad"})}};
+                        new String[]{"Cucumber", "Tomato", "Onion", "Salad"})}
+        };
     }
 
     @DataProvider(name = "ContactFormTest")
@@ -31,6 +32,7 @@ public class DataProviders {
                 {new CFType("7","8", "Green", "Gold", "afgdkgfdlgn")},
                 {new CFType("7","8","Red", "Silver", "aasdasdfgdhf")},
                 {new CFType("7","8","Yellow", "Bronze", "qwertghjj")},
-                {new CFType("7","8","Blue", "Selen","erghtbtgdnhgf")}};
+                {new CFType("7","8","Blue", "Selen","erghtbtgdnhgf")}
+        };
     }
 }

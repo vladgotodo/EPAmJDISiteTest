@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class MetalsColorsPage extends WebPage {
     @FindBy(css = ".form")
-    public MetalsColorsForm metalsColorsForm = new MetalsColorsForm();
+    public MetalsColorsForm metalsColorsForm;
 
     @FindBy(css = ".summ-res")
     public IText summaryField;

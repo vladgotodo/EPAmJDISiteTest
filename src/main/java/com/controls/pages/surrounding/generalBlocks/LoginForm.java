@@ -13,9 +13,9 @@ public class LoginForm extends Form<User> {
     @FindBy(id = "Password")
     private ITextField password;
     @FindBy(css = ".btn-login")
-    private IButton submit;
+    public IButton submit;
     @FindBy(css = ".logout")
-    private IButton close;
+    public IButton logout;
     @FindBy(css = ".profile-photo")
     private IClickable profile;
 

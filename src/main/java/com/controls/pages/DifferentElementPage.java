@@ -1,13 +1,9 @@
 package com.controls.pages;
 
-import com.controls.pages.surrounding.fillingTypes.DEType;
-import com.controls.pages.surrounding.fillingTypes.Plate;
 import com.epam.jdi.uitests.core.interfaces.common.IButton;
-import com.epam.jdi.uitests.core.interfaces.common.IText;
 import com.epam.jdi.uitests.core.interfaces.complex.ICheckList;
 import com.epam.jdi.uitests.core.interfaces.complex.IDropDown;
 import com.epam.jdi.uitests.core.interfaces.complex.IRadioButtons;
-import com.epam.jdi.uitests.web.selenium.elements.complex.CheckList;
 import com.epam.jdi.uitests.web.selenium.elements.composite.WebPage;
 import com.epam.jdi.uitests.web.selenium.elements.pageobjects.annotations.objects.JDropdown;
 import org.openqa.selenium.support.FindBy;

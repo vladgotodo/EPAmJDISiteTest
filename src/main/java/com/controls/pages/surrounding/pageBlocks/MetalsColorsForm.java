@@ -8,7 +8,6 @@ import com.epam.jdi.uitests.core.interfaces.complex.IDropDown;
 import com.epam.jdi.uitests.core.interfaces.complex.IDropList;
 import com.epam.jdi.uitests.web.selenium.elements.complex.ComboBox;
 import com.epam.jdi.uitests.web.selenium.elements.complex.DropList;
-import com.epam.jdi.uitests.web.selenium.elements.complex.Dropdown;
 import com.epam.jdi.uitests.web.selenium.elements.composite.Form;
 import com.epam.jdi.uitests.web.selenium.elements.pageobjects.annotations.JPage;
 import com.epam.jdi.uitests.web.selenium.elements.pageobjects.annotations.objects.JDropdown;
@@ -50,5 +49,11 @@ public class MetalsColorsForm extends Form<Plate> {
         saladDroplist.select("Salad");
         saladDroplist.select(plate.saladDroplist);
         super.submit(plate);
+    }
+
+    public void uncheckAll(Plate plate){
+        elementsCheckList.select(plate.elementsCheckList);
+        saladDroplist.select(plate.saladDroplist);
+        saladDroplist.select("Salad");
     }
 }
