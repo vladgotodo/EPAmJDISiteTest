@@ -4,22 +4,26 @@ import com.epam.jdi.uitests.web.selenium.elements.composite.WebPage;
 import com.epam.uitest.surrounding.InitTests;
 import com.epam.uitest.surrounding.dataproviders.DataProviders;
 import com.epam.web.matcher.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+import java.lang.reflect.Method;
+
 import static com.controls.JDITestSite.*;
+import static com.controls.pages.surrounding.Preconditions.SPPAGE_OPENED;
+import static com.epam.jdi.uitests.core.preconditions.PreconditionsState.isInState;
 
-public class NavigationElementsTests extends InitTests {
+public class NavigationElementsTest extends InitTests {
 
-    @Test(groups = "searchField", dataProviderClass = DataProviders.class, dataProvider = "SearchFieldTest")
+    @Test(dataProviderClass = DataProviders.class, dataProvider = "SearchFieldTest")
     public void searchFieldTest(String searchRequest) {
         header.searchField.findAction(searchRequest);
-        supportPage.checkOpened();
     }
 
-    @Test(groups = "navigation")
+    @Test()
     public void navigationTest() {
-        supportPage.open();
-        supportPage.checkOpened();
+        isInState(SPPAGE_OPENED);
         pageNavigationLine.next();
         datesPage.checkOpened();
         pageNavigationLine.previous();

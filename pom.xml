@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>epam</groupId>
-    <artifactId>hometask</artifactId>
+    <artifactId>epamDISiteTests</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -30,11 +30,6 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>ru.yandex.qatools.ashot</groupId>
-            <artifactId>ashot</artifactId>
-            <version>1.5.2</version>
-        </dependency>
-        <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>3.0.1</version>
@@ -42,12 +37,12 @@
 		<dependency>
 		   <groupId>org.slf4j</groupId>
 		   <artifactId>slf4j-api</artifactId>
-		   <version>1.7.5</version>
+		   <version>1.7.13</version>
 	   </dependency>
 	   <dependency>
 		   <groupId>org.slf4j</groupId>
 		   <artifactId>slf4j-simple</artifactId>
-		   <version>1.6.4</version>
+		   <version>1.7.12</version>
 	   </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -72,10 +67,10 @@
                             <value>ru.yandex.qatools.allure.testng.AllureTestListener</value>
                         </property>
                     </properties>
-                    <!--<systemPropertyVariables>
+                    <systemPropertyVariables>
                         <browser>${browser}</browser>
                     </systemPropertyVariables>
-                    <suiteXmlFiles>
+                    <!--<suiteXmlFiles>
                         <suiteXmlFile>src\test\resources\testng_${suite}.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <suiteXmlFiles>

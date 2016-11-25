@@ -1,12 +1,9 @@
-To start use "mvn clean install test site -Dsuite=all -Dbrowser=chrome"
+To start use "mvn clean install test site -Dbrowser=chrome"
 --//**\\----//**\\----//**\\--BROWSERS--//**\\----//**\\----//**\\--
 "firefox"
 "chrome"
 "opera"
 "ie"
---//**\\----//**\\----//**\\--SUITES--//**\\----//**\\----//**\\--
-"all"
-"login"
 --//**\\----//**\\----//**\\--SURROUNDING--//**\\----//**\\----//**\\--
 OS: 		Windows 10
 Firefox:	49.0.2

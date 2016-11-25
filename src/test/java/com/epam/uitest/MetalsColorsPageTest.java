@@ -6,19 +6,19 @@ import com.epam.uitest.surrounding.dataproviders.DataProviders;
 import com.epam.web.matcher.testng.Assert;
 import org.testng.annotations.*;
 
+import java.io.IOException;
+import java.lang.reflect.Method;
+
+import static com.controls.JDITestSite.homePage;
 import static com.controls.pages.surrounding.Preconditions.MCPAGE_OPENED;
 import static com.epam.jdi.uitests.core.preconditions.PreconditionsState.isInState;
 import static com.controls.JDITestSite.metalsColorsPage;
 
-public class MetalsColorsPageTests extends InitTests {
+public class MetalsColorsPageTest extends InitTests {
 
-    @BeforeMethod
-    public void beforeMethod() {
-        isInState(MCPAGE_OPENED);
-    }
-
-    @Test(groups = "metalsColorsFormTest", dataProviderClass = DataProviders.class, dataProvider = "MetalsColorsTest")
+    @Test(dataProviderClass = DataProviders.class, dataProvider = "MetalsColorsTest")
     public void metalsColorsFormTest(Plate plate) {
+        isInState(MCPAGE_OPENED);
         metalsColorsPage.metalsColorsForm.submit(plate);
         Assert.contains(metalsColorsPage.summaryField.getText(), String.valueOf(Integer.parseInt(plate.odds)
             + Integer.parseInt(plate.even)));

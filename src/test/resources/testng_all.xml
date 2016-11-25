@@ -1,14 +1,19 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="All" verbose="1" >
-    <test name="MetalsColors">
+    <test name="MetalsColorsPageTest">
         <classes>
-            <class name="com.epam.uitest.MetalsColorsPageTests"/>
+            <class name="com.epam.uitest.MetalsColorsPageTest"/>
         </classes>
     </test>
-    <test name="NavElements">
+    <test name="ContactPageTest">
         <classes>
-            <class name="com.epam.uitest.NavigationElementsTests"/>
+            <class name="com.epam.uitest.ContactPageTest"/>
+        </classes>
+    </test>
+    <test name="NavigationElementsTest">
+        <classes>
+            <class name="com.epam.uitest.NavigationElementsTest"/>
         </classes>
     </test>
 </suite>

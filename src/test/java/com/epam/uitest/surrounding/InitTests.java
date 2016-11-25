@@ -35,6 +35,7 @@ public class InitTests extends TestNGBase {
             logger.info(actionName.format("'%s' action result: %s", actionName, result));
             return result;
         };
+        WebSettings.useDriver(System.getProperty("browser"));
         WebSite.init(JDITestSite.class);
         isInState(HOMEPAGE_OPENED);
         isInState(LOGIN);

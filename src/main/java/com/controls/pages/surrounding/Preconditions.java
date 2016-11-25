@@ -6,9 +6,7 @@ import com.epam.jdi.uitests.web.selenium.preconditions.WebPreconditions;
 
 import java.util.function.Supplier;
 
-import static com.controls.JDITestSite.homePage;
-import static com.controls.JDITestSite.login;
-import static com.controls.JDITestSite.metalsColorsPage;
+import static com.controls.JDITestSite.*;
 
 public enum Preconditions implements WebPreconditions {
     LOGIN(
@@ -26,7 +24,15 @@ public enum Preconditions implements WebPreconditions {
     MCPAGE_OPENED(
             () -> metalsColorsPage.verifyOpened(),
             () -> metalsColorsPage.open()
-    );
+    ),
+    CPPAGE_OPENED(
+            () -> contactPage.verifyOpened(),
+            () -> contactPage.open()
+    ),
+    SPPAGE_OPENED(
+            () -> supportPage.verifyOpened(),
+            () -> supportPage.open()
+            );
 
     public Supplier<Boolean> checkAction;
     public JAction moveToAction;
