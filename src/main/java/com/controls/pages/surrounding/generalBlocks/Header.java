@@ -10,11 +10,8 @@ public class Header extends Section {
     @FindBy(id = "epam_logo")
     public IImage logo;
 
-    @FindBy(css = ".m-l8>li>a")
-    public IMenu headerMenuMain;
-
-    @FindBy(css = ".m-l8>li>a>.dropdown-toggle>.dropdown-menu>li>a")
-    public IMenu headerMenuService;
+    @FindBy(css = ".m-l8")
+    public IMenu headerMenu;
 
     @FindBy(css = ".icon-search")
     public IButton openSearchButton;

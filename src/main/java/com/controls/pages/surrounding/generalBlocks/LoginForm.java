@@ -1,6 +1,6 @@
 package com.controls.pages.surrounding.generalBlocks;
 
-import com.controls.pages.surrounding.fillingTypes.User;
+import com.controls.pages.surrounding.entities.User;
 import com.epam.jdi.uitests.core.interfaces.base.IClickable;
 import com.epam.jdi.uitests.core.interfaces.common.IButton;
 import com.epam.jdi.uitests.core.interfaces.common.ITextField;
@@ -17,7 +17,7 @@ public class LoginForm extends Form<User> {
     @FindBy(css = ".logout")
     public IButton logout;
     @FindBy(css = ".profile-photo")
-    private IClickable profile;
+    public IClickable profile;
 
     @Override
     public void submit(User user) {

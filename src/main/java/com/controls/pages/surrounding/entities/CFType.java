@@ -1,4 +1,4 @@
-package com.controls.pages.surrounding.fillingTypes;
+package com.controls.pages.surrounding.entities;
 
 public class CFType {
     public static final CFType DEFAULT = new CFType();

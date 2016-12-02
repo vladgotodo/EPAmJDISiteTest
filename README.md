@@ -1,12 +1,17 @@
-To start use "mvn clean install test site -Dbrowser=chrome"
---//**\\----//**\\----//**\\--BROWSERS--//**\\----//**\\----//**\\--
+To start use "mvn clean test site -Dbrowser=chrome"
+
+----------------------BROWSERS----------------------
+
 "firefox"
 "chrome"
-"opera"
 "ie"
---//**\\----//**\\----//**\\--SURROUNDING--//**\\----//**\\----//**\\--
-OS: 		Windows 10
-Firefox:	49.0.2
+
+---------------------SURROUNDING--------------------
+
+OS: 		Windows 10 Pro/1607/build:14393.447/
+
+Firefox:	50.0
+
+Chrome:		54.0.2840.99 m (64-bit)
+
 IE: 		11.321.14393.0
-Chrome:		54.0.2840.71 m (64-bit)
-Opera:		41.0.2353.46

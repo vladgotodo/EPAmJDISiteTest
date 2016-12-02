@@ -1,6 +1,6 @@
-package com.controls.pages.surrounding;
+package com.controls.pages.surrounding.enums;
 
-import com.controls.pages.surrounding.fillingTypes.User;
+import com.controls.pages.surrounding.entities.User;
 import com.epam.commons.linqinterfaces.JAction;
 import com.epam.jdi.uitests.web.selenium.preconditions.WebPreconditions;
 
@@ -28,6 +28,22 @@ public enum Preconditions implements WebPreconditions {
     CPPAGE_OPENED(
             () -> contactPage.verifyOpened(),
             () -> contactPage.open()
+    ),
+    CTPAGE_OPENED(
+            () -> complexTablePage.verifyOpened(),
+            () -> complexTablePage.open()
+    ),
+    STPAGE_OPENED(
+            () -> simpleTablePage.verifyOpened(),
+            () -> simpleTablePage.open()
+    ),
+    DaPAGE_OPENED(
+            () -> datesPage.verifyOpened(),
+            () -> datesPage.open()
+    ),
+    TPPAGE_OPENED(
+            () -> tablePagesPage.verifyOpened(),
+            () -> tablePagesPage.open()
     ),
     SPPAGE_OPENED(
             () -> supportPage.verifyOpened(),

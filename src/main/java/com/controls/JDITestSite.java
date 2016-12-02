@@ -3,6 +3,7 @@ package com.controls;
 import com.controls.pages.*;
 import com.controls.pages.surrounding.generalBlocks.*;
 import com.epam.jdi.uitests.core.interfaces.complex.IPagination;
+import com.epam.jdi.uitests.web.selenium.elements.complex.TextList;
 import com.epam.jdi.uitests.web.selenium.elements.composite.Pagination;
 import com.epam.jdi.uitests.web.selenium.elements.composite.WebSite;
 import com.epam.jdi.uitests.web.selenium.elements.pageobjects.annotations.JPage;
@@ -18,22 +19,6 @@ public class JDITestSite extends WebSite{
     public static ContactPage contactPage;
     @JPage(url = "/page2.htm", title = "Metal and Colors")
     public static MetalsColorsPage metalsColorsPage;
-    @FindBy(css = ".uui-profile-menu")
-    public static LoginForm login;
-    @FindBy(css = ".uui-header")
-    public static Header header;
-    @FindBy(css = ".footer-content")
-    public static Footer footer;
-    @FindBy(css = ".sidebar-menu")
-    public static Sidebar sidebar;
-    @JPage(url = "/page8.htm", title = "Different Element")
-    public static DifferentElementPage differentElementPage;
-    @FindBy(css = ".sidebar-menu>li>a")
-    public static IPagination pageNavigationLine = new Pagination(By.className(".sidebar-menu>li>a"),
-            By.className("fa-long-arrow-right"), By.className("fa-long-arrow-left"),
-            By.xpath("/html/body/div/div/main/div[2]/ul/li[2]/a"),
-            By.xpath("/html/body/div/div/main/div[2]/ul/li[11]/a"));
-
     @JPage(url = "/page3.htm", title = "Support")
     public static SupportPage supportPage;
     @JPage(url = "/page4.htm", title = "Dates")
@@ -44,4 +29,19 @@ public class JDITestSite extends WebSite{
     public static SimpleTablePage simpleTablePage;
     @JPage(url = "/page7.htm", title = "Table with pages")
     public static TablePagesPage tablePagesPage;
+    @FindBy(css = ".uui-profile-menu")
+    public static LoginForm login;
+    @FindBy(css = ".uui-header")
+    public static Header header;
+    @FindBy(css = ".footer-content")
+    public static Footer footer;
+    @FindBy(css = ".sidebar-menu")
+    public static Sidebar sidebar;
+    @FindBy(css = ".sidebar-menu>li>a")
+    public static IPagination pageNavigationLine = new Pagination(By.className(".sidebar-menu>li>a"),
+            By.className("fa-long-arrow-right"), By.className("fa-long-arrow-left"),
+            By.xpath("/html/body/div/div/main/div[2]/ul/li[2]/a"),
+            By.xpath("/html/body/div/div/main/div[2]/ul/li[11]/a"));
+    @FindBy(css = ".logs li")
+    public static TextList<Enum> logPanel;
 }

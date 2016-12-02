@@ -1,4 +1,4 @@
-package com.controls.pages.surrounding.fillingTypes;
+package com.controls.pages.surrounding.entities;
 
 public class Plate {
     public static final Plate DEFAULT = new Plate();

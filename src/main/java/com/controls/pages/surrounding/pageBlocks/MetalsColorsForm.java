@@ -1,6 +1,6 @@
 package com.controls.pages.surrounding.pageBlocks;
 
-import com.controls.pages.surrounding.fillingTypes.Plate;
+import com.controls.pages.surrounding.entities.Plate;
 import com.epam.jdi.uitests.core.interfaces.common.IButton;
 import com.epam.jdi.uitests.core.interfaces.complex.ICheckList;
 import com.epam.jdi.uitests.core.interfaces.complex.IComboBox;
@@ -46,14 +46,16 @@ public class MetalsColorsForm extends Form<Plate> {
         elementsCheckList.select(plate.elementsCheckList);
         colorsDropdown.click();
         colorsDropdown.select(plate.color);
-        saladDroplist.select("Salad");
+        /* UNUSED BECAUSE IT IS A BUG
+        saladDroplist.select("Salad");*/
         saladDroplist.select(plate.saladDroplist);
         super.submit(plate);
     }
 
-    public void uncheckAll(Plate plate){
+    public void uncheckElements(Plate plate){
         elementsCheckList.select(plate.elementsCheckList);
+    /* UNUSED BECAUSE IT IS A BUG
         saladDroplist.select(plate.saladDroplist);
-        saladDroplist.select("Salad");
+        saladDroplist.select("Salad");*/
     }
 }
