@@ -18,7 +18,7 @@ public class SimpleTablePageTest extends InitTests {
         Assert.assertEquals(simpleTablePage.simplePageTable.cell(x, y).getText(), cellText,
                 "Unexpected text in cell");
         simpleTablePage.simplePageTable.cell(x, y).click();
-        Assert.contains(logPanel.getFirstText(), "value="+ simpleTablePage.simplePageTable.cell(x, y).getText() +
+        Assert.contains(logPanel.getFirstText(), "value=" + simpleTablePage.simplePageTable.cell(x, y).getText() +
                 "; cell has been selected", "No necessary field found in log panel");
     }
 }

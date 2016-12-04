@@ -10,12 +10,16 @@ import static com.controls.JDITestSite.*;
 
 public enum Preconditions implements WebPreconditions {
     LOGIN(
-            () -> login.logout.isDisplayed(),
+            () -> login.name.isDisplayed(),
             () -> login.submit(User.DEFAULT)
     ),
     LOGOUT(
-            () -> !login.logout.isDisplayed(),
-            () -> login.logout.click()
+            () -> login.name.isHidden(),
+            () -> login.logout()
+    ),
+    LOGOUT_BTN(
+            () -> login.logout.isHidden() && login.name.isDisplayed(),
+            () -> login.profile.click()
     ),
     HOMEPAGE_OPENED(
             () -> homePage.verifyOpened(),

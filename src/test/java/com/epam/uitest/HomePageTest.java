@@ -10,18 +10,20 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static com.controls.JDITestSite.*;
+import static com.controls.pages.surrounding.enums.Preconditions.HOMEPAGE_OPENED;
 import static com.controls.pages.surrounding.enums.Preconditions.LOGOUT;
+import static com.controls.pages.surrounding.enums.Preconditions.LOGOUT_BTN;
 import static com.epam.jdi.uitests.core.preconditions.PreconditionsState.isInState;
 
 public class HomePageTest extends InitTestWithoutLogin {
 
     @BeforeMethod(alwaysRun = true)
     public static void setUpBeforeTests() {
-        isInState(LOGOUT);
     }
 
     @Test(dataProviderClass = DataProviders.class, dataProvider = "UserLogin")
     public void loginTest(boolean valid, User user) {
+        isInState(HOMEPAGE_OPENED);
         login.submit(user);
         Assert.assertEquals(login.logout.isDisplayed(), valid, "Unexpected login result");
         if (!valid)
@@ -35,8 +37,11 @@ public class HomePageTest extends InitTestWithoutLogin {
         Assert.assertEquals(sidebar.isDisplayed(), true, "Sidebar is not displayed");
         login.submit(user);
         page.open();
-        if (valid)
+        if (valid) {
             Assert.assertEquals(WebSettings.getDriver().getCurrentUrl(), page.url, "Unexpected login result");
+            isInState(LOGOUT_BTN);
+            isInState(LOGOUT);
+        }
         else
             Assert.assertEquals(WebSettings.getDriver().getCurrentUrl(), homePage.url, "Unexpected login result");
     }

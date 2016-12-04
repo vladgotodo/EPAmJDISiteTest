@@ -10,7 +10,6 @@ import org.testng.annotations.Test;
 import static com.controls.JDITestSite.datesPage;
 import static com.controls.pages.surrounding.enums.Preconditions.DaPAGE_OPENED;
 import static com.epam.jdi.uitests.core.preconditions.PreconditionsState.isInState;
-import static com.epam.uitest.surrounding.Actions.*;
 
 public class DatesPageTest extends InitTests {
     private final String DEFAULT_TIME = "10:30 AM";
@@ -101,7 +100,7 @@ public class DatesPageTest extends InitTests {
                 cFType.description, "Unexpected result in result panel(\"description field\")");
     }
 
-    @Test
+    /*@Test
     public void inputFileLoadedTest() {
         datesPage.imageInput.input(getFPath());
         checkFileLoaded(datesPage.uploadedFileName.getText(), fileName());
@@ -117,5 +116,5 @@ public class DatesPageTest extends InitTests {
     public void newInputFileLoadedTest() throws Exception {
         datesPage.imageInput.newInput(getFPath());
         checkFileLoaded(datesPage.uploadedFileName.getText(), fileName());
-    }
+    }*/
 }

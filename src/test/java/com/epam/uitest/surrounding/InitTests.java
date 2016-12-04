@@ -51,6 +51,7 @@ public class InitTests extends TestNGBase {
         };
         WebSettings.useDriver(System.getProperty("browser"));
         //WebSettings.useDriver("firefox");
+        //WebSettings.useDriver("chrome");
         WebSite.init(JDITestSite.class);
         isInState(HOMEPAGE_OPENED);
         isInState(LOGIN);

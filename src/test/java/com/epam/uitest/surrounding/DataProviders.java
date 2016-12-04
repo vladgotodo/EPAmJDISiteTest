@@ -79,13 +79,13 @@ public class DataProviders {
     @DataProvider(name = "AccessTest")
     public static Object[][] accessTestDP() {
         return new Object[][]{
-                {false, contactPage, User.EMPTY},
+                /*{false, contactPage, User.EMPTY},
                 {false, metalsColorsPage, User.EMPTY},
                 {false, supportPage, User.EMPTY},
                 {false, datesPage, User.EMPTY},
                 {false, simpleTablePage, User.EMPTY},
                 {false, complexTablePage, User.EMPTY},
-                {false, tablePagesPage, User.EMPTY},
+                {false, tablePagesPage, User.EMPTY},*/
                 {true, contactPage, User.DEFAULT},
                 {true, metalsColorsPage, User.DEFAULT},
                 {true, supportPage, User.DEFAULT},
