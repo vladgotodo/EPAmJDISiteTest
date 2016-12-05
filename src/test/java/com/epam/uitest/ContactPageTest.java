@@ -7,13 +7,14 @@ import com.epam.web.matcher.testng.Assert;
 import org.testng.annotations.Test;
 
 import static com.controls.JDITestSite.contactPage;
-import static com.controls.pages.surrounding.enums.Preconditions.CPPAGE_OPENED;
+import static com.controls.pages.surrounding.enums.Preconditions.LOGIN;
 import static com.epam.jdi.uitests.core.preconditions.PreconditionsState.isInState;
 
 public class ContactPageTest extends InitTests {
     @Test(dataProviderClass = DataProviders.class, dataProvider = "ContactFormTest")
         public void contactFormTest(CFType cFType) {
-            isInState(CPPAGE_OPENED);
+            isInState(LOGIN);
+            contactPage.open();
             contactPage.submit(cFType);
             Assert.areEquals(contactPage.summaryField.getText().substring(9,
                     contactPage.summaryField.getText().length()),

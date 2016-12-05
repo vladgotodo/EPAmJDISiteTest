@@ -3,16 +3,23 @@ package com.epam.uitest;
 import com.epam.commons.Timer;
 import com.epam.jdi.uitests.web.selenium.elements.composite.WebPage;
 import com.epam.jdi.uitests.web.settings.WebSettings;
-import com.epam.uitest.surrounding.InitTests;
 import com.epam.uitest.surrounding.DataProviders;
+import com.epam.uitest.surrounding.InitTests;
 import com.epam.web.matcher.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import static com.controls.JDITestSite.*;
-import static com.controls.pages.surrounding.enums.Preconditions.SPPAGE_OPENED;
+import static com.controls.pages.surrounding.enums.Preconditions.*;
 import static com.epam.jdi.uitests.core.preconditions.PreconditionsState.isInState;
 
 public class NavigationElementsTest extends InitTests {
+    @BeforeClass
+    public void beforeTest(){
+        homePage.open();
+        isInState(LOGIN);
+    }
+
     @Test(dataProviderClass = DataProviders.class, dataProvider = "SearchFieldTest")
     public void searchFieldTest(String searchRequest) {
         header.searchField.isDisplayed();
@@ -22,7 +29,7 @@ public class NavigationElementsTest extends InitTests {
 
     @Test
     public void paginatorNavTest() {
-        isInState(SPPAGE_OPENED);
+        supportPage.open();
         pageNavigationLine.next();
         Timer.waitCondition(() -> WebSettings.getDriver().getCurrentUrl().equals(datesPage.url));
         Assert.areEquals(WebSettings.getDriver().getCurrentUrl(), datesPage.url, "Unexpected url");

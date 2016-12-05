@@ -6,13 +6,14 @@ import com.epam.web.matcher.testng.Assert;
 import org.testng.annotations.Test;
 
 import static com.controls.JDITestSite.complexTablePage;
-import static com.controls.pages.surrounding.enums.Preconditions.CTPAGE_OPENED;
+import static com.controls.pages.surrounding.enums.Preconditions.LOGIN;
 import static com.epam.jdi.uitests.core.preconditions.PreconditionsState.isInState;
 
 public class ComplexTablePageTest extends InitTests {
     @Test
     public void complexTablePageTest() {
-        isInState(CTPAGE_OPENED);
+        isInState(LOGIN);
+        complexTablePage.open();
         //Chrome bug
         Assert.assertEquals(complexTablePage.dynamicTable.columns().count(), 3, "Unexpected colums count");
         complexTablePage.deleteColumn(ColumnHeaders.col1);

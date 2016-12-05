@@ -8,7 +8,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import static com.controls.JDITestSite.datesPage;
-import static com.controls.pages.surrounding.enums.Preconditions.DaPAGE_OPENED;
+import static com.controls.pages.surrounding.enums.Preconditions.LOGIN;
 import static com.epam.jdi.uitests.core.preconditions.PreconditionsState.isInState;
 
 public class DatesPageTest extends InitTests {
@@ -18,7 +18,8 @@ public class DatesPageTest extends InitTests {
 
     @BeforeTest
     public static void setUpBeforeTests() {
-        isInState(DaPAGE_OPENED);
+        isInState(LOGIN);
+        datesPage.open();
     }
 
     @Test(dataProviderClass = DataProviders.class, dataProvider = "DatepickerFieldDatesPageTest")

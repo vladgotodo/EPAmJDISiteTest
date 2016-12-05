@@ -19,39 +19,7 @@ public enum Preconditions implements WebPreconditions {
     LOGOUT_BTN(
             () -> login.logout.isHidden() && login.name.isDisplayed(),
             () -> login.profile.click()
-    ),
-    HOMEPAGE_OPENED(
-            () -> homePage.verifyOpened(),
-            () -> homePage.open()
-    ),
-    MCPAGE_OPENED(
-            () -> metalsColorsPage.verifyOpened(),
-            () -> metalsColorsPage.open()
-    ),
-    CPPAGE_OPENED(
-            () -> contactPage.verifyOpened(),
-            () -> contactPage.open()
-    ),
-    CTPAGE_OPENED(
-            () -> complexTablePage.verifyOpened(),
-            () -> complexTablePage.open()
-    ),
-    STPAGE_OPENED(
-            () -> simpleTablePage.verifyOpened(),
-            () -> simpleTablePage.open()
-    ),
-    DaPAGE_OPENED(
-            () -> datesPage.verifyOpened(),
-            () -> datesPage.open()
-    ),
-    TPPAGE_OPENED(
-            () -> tablePagesPage.verifyOpened(),
-            () -> tablePagesPage.open()
-    ),
-    SPPAGE_OPENED(
-            () -> supportPage.verifyOpened(),
-            () -> supportPage.open()
-            );
+    );
 
     public Supplier<Boolean> checkAction;
     public JAction moveToAction;

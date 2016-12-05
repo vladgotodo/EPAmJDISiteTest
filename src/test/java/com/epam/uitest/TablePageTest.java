@@ -4,18 +4,19 @@ import com.epam.jdi.uitests.web.selenium.elements.complex.table.Table;
 import com.epam.uitest.surrounding.DataProviders;
 import com.epam.uitest.surrounding.InitTests;
 import com.epam.web.matcher.testng.Assert;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import static com.controls.JDITestSite.tablePagesPage;
-import static com.controls.pages.surrounding.enums.Preconditions.TPPAGE_OPENED;
+import static com.controls.pages.surrounding.enums.Preconditions.*;
 import static com.epam.jdi.uitests.core.preconditions.PreconditionsState.isInState;
 
 public class TablePageTest extends InitTests {
 
-    @BeforeTest
+    @BeforeClass
     public static void setUpBeforeTests() {
-        isInState(TPPAGE_OPENED);
+        isInState(LOGIN);
+        tablePagesPage.open();
     }
 
     @Test(dataProviderClass = DataProviders.class, dataProvider = "RowsCountTablePageTest")

@@ -1,6 +1,9 @@
 package com.epam.uitest.surrounding;
 
 import com.controls.JDITestSite;
+import com.controls.pages.surrounding.generalBlocks.CustomElements.MyButton;
+import com.controls.pages.surrounding.generalBlocks.CustomElements.MyTable;
+import com.controls.pages.surrounding.generalBlocks.CustomElements.MyTextField;
 import com.epam.jdi.uitests.core.interfaces.MapInterfaceToElement;
 import com.epam.jdi.uitests.core.interfaces.common.IButton;
 import com.epam.jdi.uitests.core.interfaces.common.ITextField;
@@ -10,22 +13,20 @@ import com.epam.jdi.uitests.web.selenium.elements.composite.WebSite;
 import com.epam.jdi.uitests.web.settings.WebSettings;
 import com.epam.jdi.uitests.web.testng.testRunner.TestNGBase;
 import com.epam.web.matcher.verify.Verify;
-import org.testng.annotations.*;
-import com.controls.pages.surrounding.generalBlocks.CustomElements.*;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+
 import java.util.Map;
 import java.util.TreeMap;
 
-import static com.controls.pages.surrounding.enums.Preconditions.HOMEPAGE_OPENED;
-import static com.controls.pages.surrounding.enums.Preconditions.LOGIN;
-import static com.epam.jdi.uitests.core.preconditions.PreconditionsState.isInState;
 import static com.epam.jdi.uitests.core.settings.JDISettings.logger;
 
 public class InitTests extends TestNGBase {
 
     static Map<Long, String> allActionsTimeNano = new TreeMap<>();
 
-    @BeforeSuite(alwaysRun = true)
-    public static void setUpBeforeSuite() throws Exception {
+    @BeforeClass(alwaysRun = true)
+    public static void setUpBeforeClass() throws Exception {
         MapInterfaceToElement.update(
                 new Object[][]{
                         {ITextField.class, MyTextField.class},
@@ -49,17 +50,15 @@ public class InitTests extends TestNGBase {
                     result.toString().toUpperCase()));
             return result;
         };
-        WebSettings.useDriver(System.getProperty("browser"));
+        //WebSettings.useDriver(System.getProperty("browser"));
         //WebSettings.useDriver("firefox");
-        //WebSettings.useDriver("chrome");
+        WebSettings.useDriver("chrome");
         WebSite.init(JDITestSite.class);
-        isInState(HOMEPAGE_OPENED);
-        isInState(LOGIN);
         Verify.getFails();
-        logger.info("Run Tests");
+        logger.info("Run Tests----------------------------------------------");
     }
 
-    @AfterSuite
+    @AfterClass
     public void tearDownAfterSuite() {
         Verify.getFails();
         WebSettings.getDriverFactory().close();

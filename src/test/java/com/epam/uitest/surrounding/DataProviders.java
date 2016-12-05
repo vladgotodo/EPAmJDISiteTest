@@ -74,8 +74,6 @@ public class DataProviders {
         };
     }
 
-    //(boolean positiveTest, WebPage page, User user)
-
     @DataProvider(name = "AccessTest")
     public static Object[][] accessTestDP() {
         return new Object[][]{

@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="All" verbose="2"><!-- parallel="classes" thread-count="2">-->
+    <test name="JDITests">
+        <classes>
+            <class name="com.epam.uitest.DatesPageTest"/>
+            <class name="com.epam.uitest.HomePageTest"/>
+            <class name="com.epam.uitest.NavigationElementsTest"/>
+            <class name="com.epam.uitest.TablePageTest"/>
+        </classes>
+    </test>
+</suite>

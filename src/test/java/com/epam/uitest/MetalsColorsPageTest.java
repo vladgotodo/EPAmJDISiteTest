@@ -1,20 +1,21 @@
 package com.epam.uitest;
 
 import com.controls.pages.surrounding.entities.Plate;
-import com.epam.uitest.surrounding.InitTests;
 import com.epam.uitest.surrounding.DataProviders;
+import com.epam.uitest.surrounding.InitTests;
 import com.epam.web.matcher.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.Test;
 
 import static com.controls.JDITestSite.contactPage;
-import static com.controls.pages.surrounding.enums.Preconditions.MCPAGE_OPENED;
-import static com.epam.jdi.uitests.core.preconditions.PreconditionsState.isInState;
 import static com.controls.JDITestSite.metalsColorsPage;
+import static com.controls.pages.surrounding.enums.Preconditions.LOGIN;
+import static com.epam.jdi.uitests.core.preconditions.PreconditionsState.isInState;
 
 public class MetalsColorsPageTest extends InitTests {
     @Test(dataProviderClass = DataProviders.class, dataProvider = "MetalsColorsTest")
     public void metalsColorsFormTest(boolean valid, Plate plate) {
-        isInState(MCPAGE_OPENED);
+        isInState(LOGIN);
+        metalsColorsPage.open();
         metalsColorsPage.metalsColorsForm.submit(plate);
         metalsColorsPage.metalsColorsForm.uncheckElements(plate);
         Assert.areEquals(contactPage.summaryField.getText().substring(9, contactPage.summaryField.getText().length()),
