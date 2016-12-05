@@ -4,7 +4,6 @@ To start use "mvn clean test site -Dbrowser=chrome"
 
 "firefox"
 "chrome"
-"ie"
 
 ---------------------SURROUNDING--------------------
 

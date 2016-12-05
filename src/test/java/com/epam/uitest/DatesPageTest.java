@@ -4,7 +4,7 @@ import com.controls.pages.surrounding.entities.CFType;
 import com.epam.uitest.surrounding.DataProviders;
 import com.epam.uitest.surrounding.InitTests;
 import com.epam.web.matcher.testng.Assert;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import static com.controls.JDITestSite.datesPage;
@@ -16,7 +16,7 @@ public class DatesPageTest extends InitTests {
     private final String CHANGED_TIME = "11:45 PM";
 
 
-    @BeforeMethod(alwaysRun = true)
+    @BeforeTest
     public static void setUpBeforeTests() {
         isInState(DaPAGE_OPENED);
     }

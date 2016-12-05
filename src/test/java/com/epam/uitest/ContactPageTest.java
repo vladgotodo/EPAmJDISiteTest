@@ -1,8 +1,8 @@
 package com.epam.uitest;
 
 import com.controls.pages.surrounding.entities.CFType;
-import com.epam.uitest.surrounding.InitTests;
 import com.epam.uitest.surrounding.DataProviders;
+import com.epam.uitest.surrounding.InitTests;
 import com.epam.web.matcher.testng.Assert;
 import org.testng.annotations.Test;
 

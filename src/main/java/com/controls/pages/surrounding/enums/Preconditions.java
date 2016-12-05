@@ -3,7 +3,6 @@ package com.controls.pages.surrounding.enums;
 import com.controls.pages.surrounding.entities.User;
 import com.epam.commons.linqinterfaces.JAction;
 import com.epam.jdi.uitests.web.selenium.preconditions.WebPreconditions;
-
 import java.util.function.Supplier;
 
 import static com.controls.JDITestSite.*;

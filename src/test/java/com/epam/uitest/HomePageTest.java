@@ -6,24 +6,22 @@ import com.epam.jdi.uitests.web.settings.WebSettings;
 import com.epam.uitest.surrounding.DataProviders;
 import com.epam.uitest.surrounding.InitTestWithoutLogin;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import static com.controls.JDITestSite.*;
-import static com.controls.pages.surrounding.enums.Preconditions.HOMEPAGE_OPENED;
-import static com.controls.pages.surrounding.enums.Preconditions.LOGOUT;
-import static com.controls.pages.surrounding.enums.Preconditions.LOGOUT_BTN;
+import static com.controls.pages.surrounding.enums.Preconditions.*;
 import static com.epam.jdi.uitests.core.preconditions.PreconditionsState.isInState;
 
 public class HomePageTest extends InitTestWithoutLogin {
 
-    @BeforeMethod(alwaysRun = true)
+    @BeforeTest
     public static void setUpBeforeTests() {
+        isInState(HOMEPAGE_OPENED);
     }
 
     @Test(dataProviderClass = DataProviders.class, dataProvider = "UserLogin")
     public void loginTest(boolean valid, User user) {
-        isInState(HOMEPAGE_OPENED);
         login.submit(user);
         Assert.assertEquals(login.logout.isDisplayed(), valid, "Unexpected login result");
         if (!valid)

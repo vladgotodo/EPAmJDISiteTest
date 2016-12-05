@@ -18,6 +18,7 @@ public class InitTestWithoutLogin extends TestNGBase {
     public static void setUpBeforeSuite() throws Exception {
         WebSettings.useDriver(System.getProperty("browser"));
         //WebSettings.useDriver("Firefox");
+        //WebSettings.useDriver("chrome");
         WebSite.init(JDITestSite.class);
         isInState(HOMEPAGE_OPENED);
         Verify.getFails();

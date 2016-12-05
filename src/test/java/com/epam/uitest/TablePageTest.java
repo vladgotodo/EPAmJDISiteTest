@@ -4,7 +4,7 @@ import com.epam.jdi.uitests.web.selenium.elements.complex.table.Table;
 import com.epam.uitest.surrounding.DataProviders;
 import com.epam.uitest.surrounding.InitTests;
 import com.epam.web.matcher.testng.Assert;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import static com.controls.JDITestSite.tablePagesPage;
@@ -13,7 +13,7 @@ import static com.epam.jdi.uitests.core.preconditions.PreconditionsState.isInSta
 
 public class TablePageTest extends InitTests {
 
-    @BeforeMethod(alwaysRun = true)
+    @BeforeTest
     public static void setUpBeforeTests() {
         isInState(TPPAGE_OPENED);
     }
